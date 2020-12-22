@@ -8,5 +8,5 @@
    --conf spark.kubernetes.container.image=k8s/spark \
    --conf spark.kubernetes.namespace=default \
    --conf spark.kubernetes.executor.request.cores=0.5 \
-   --spark.kubernetes.executor.limit.cores=0.5 \
+   --conf spark.kubernetes.executor.limit.cores=0.5 \
    local:///opt/spark/examples/jars/spark-examples_2.11-2.4.4.jar
