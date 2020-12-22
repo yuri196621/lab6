@@ -5,6 +5,6 @@
    --name spark-pi \
    --class org.apache.spark.examples.SparkPi \
    --conf spark.executor.instances=2 \
-   --conf spark.kubernetes.container.image=k8s2/spark \
+   --conf spark.kubernetes.container.image=k8s/spark \
    --conf spark.kubernetes.namespace=default \
    local:///opt/spark/examples/jars/spark-examples_2.11-2.4.4.jar
