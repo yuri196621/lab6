@@ -5,7 +5,7 @@ sudo mv spark-2.4.4-bin-hadoop2.7 /opt/spark
 cd /opt/spark
 echo 'RUN rm $SPARK_HOME/jars/kubernetes-client-4.1.2.jar' >> kubernetes/dockerfiles/spark/Dockerfile
 echo 'ADD https://repo1.maven.org/maven2/io/fabric8/kubernetes-client/4.5.1/kubernetes-client-4.5.1.jar $SPARK_HOME/jars' >> kubernetes/dockerfiles/spark/Dockerfile
-su hpc
+
 minikube config set vm-driver hyperkit
 minikube config set cpus 2
 minikube config set memory 4096
