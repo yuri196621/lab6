@@ -6,10 +6,7 @@ cd /opt/spark
 echo 'RUN rm $SPARK_HOME/jars/kubernetes-client-4.1.2.jar' >> kubernetes/dockerfiles/spark/Dockerfile
 echo 'ADD https://repo1.maven.org/maven2/io/fabric8/kubernetes-client/4.5.1/kubernetes-client-4.5.1.jar $SPARK_HOME/jars' >> kubernetes/dockerfiles/spark/Dockerfile
 
-minikube config set vm-driver hyperkit
-minikube config set cpus 2
-minikube config set memory 4096
-minikube start
+minikube start --vm-driver=docker
 minikube dashboard &
 ./bin/docker-image-tool.sh -r k8s -m build
 kubectl create clusterrolebinding default --clusterrole=edit --serviceaccount=default:default --namespace=default
