@@ -1,5 +1,5 @@
 #!/bin/bash
-bin/spark-submit \
+/opt/spark/bin/spark-submit \
    --master k8s://https://$(kubectl get node minikube -o jsonpath='{.status.addresses[0].address}'):8443 \
    --deploy-mode client \
    --name spark-pi \
